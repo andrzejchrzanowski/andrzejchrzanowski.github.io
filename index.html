@@ -2,535 +2,873 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Andrzej Chrzanowski | Oficjalna strona</title>
 
-<meta name="description" content="Andrzej Chrzanowski – menedżer, instruktor, wykładowca i trener. Doświadczenie w bezpieczeństwie, szkoleniach, zarządzaniu i hotelarstwie.">
+<meta name="description" content="Andrzej Chrzanowski – menedżer, instruktor, wykładowca i trener. Doświadczenie w obszarze bezpieczeństwa, zarządzania, edukacji, szkoleń i hotelarstwa.">
 <meta name="author" content="Andrzej Chrzanowski">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Andrzej Chrzanowski | Oficjalna strona">
+<meta property="og:description" content="Profesjonalizm • Doświadczenie • Bezpieczeństwo • Rozwój">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://andrzejchrzanowski.pl">
 
 <style>
+
 :root{
---blue:#1268c9;
---dark:#111827;
---text:#26313d;
---muted:#657180;
---light:#f5f8fc;
---white:#fff;
---line:#dfe6ee;
---radius:22px;
+  --blue:#1268c9;
+  --blue-dark:#0b4f9c;
+  --dark:#111827;
+  --text:#26313d;
+  --muted:#657180;
+  --light:#f4f7fb;
+  --white:#ffffff;
+  --line:#dfe6ee;
+  --radius:22px;
+  --shadow:0 12px 35px rgba(17,24,39,.08);
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-color:var(--text);
-background:var(--white);
-line-height:1.65;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.7;
 }
 
 a{
-color:inherit;
-text-decoration:none;
+  color:inherit;
+  text-decoration:none;
 }
 
 .container{
-max-width:1100px;
-margin:auto;
-padding:0 24px;
+  width:min(1100px,92%);
+  margin:auto;
 }
+
+/* NAVIGATION */
 
 nav{
-position:sticky;
-top:0;
-z-index:20;
-background:rgba(255,255,255,.96);
-border-bottom:1px solid var(--line);
-backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
 }
 
-.navin{
-height:72px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
+.nav-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
 .logo{
-font-size:22px;
-font-weight:900;
-color:var(--blue);
-letter-spacing:-.5px;
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:-.5px;
+  color:var(--dark);
 }
 
-.links{
-display:flex;
-gap:25px;
-font-weight:700;
-font-size:15px;
+.logo span{
+  color:var(--blue);
 }
 
-.links a:hover{
-color:var(--blue);
+.nav-links{
+  display:flex;
+  gap:24px;
+  font-size:15px;
+  font-weight:700;
 }
+
+.nav-links a:hover{
+  color:var(--blue);
+}
+
+/* HERO */
 
 .hero{
-padding:95px 0 80px;
-background:linear-gradient(180deg,#f7faff 0%,#fff 100%);
+  padding:90px 0 80px;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(18,104,201,.12),transparent 30%),
+    linear-gradient(180deg,#fff 0%,#f6f9fd 100%);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  align-items:center;
+  gap:60px;
 }
 
 .kicker{
-color:var(--blue);
-font-weight:900;
-letter-spacing:3px;
-text-transform:uppercase;
-font-size:15px;
-margin-bottom:15px;
+  color:var(--blue);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:16px;
+  margin-bottom:18px;
 }
 
 h1{
-font-size:clamp(46px,8vw,88px);
-line-height:.98;
-letter-spacing:-4px;
-margin:0 0 28px;
-color:var(--dark);
+  margin:0;
+  color:var(--dark);
+  font-size:clamp(46px,7vw,78px);
+  line-height:1.02;
+  letter-spacing:-3px;
 }
 
-.hero p{
-font-size:clamp(20px,3vw,28px);
-color:var(--muted);
-max-width:800px;
-margin:0 0 35px;
+.hero-subtitle{
+  margin:28px 0;
+  font-size:clamp(21px,3vw,30px);
+  color:var(--muted);
+  font-weight:500;
+}
+
+.hero-text{
+  max-width:700px;
+  font-size:18px;
+  color:var(--text);
 }
 
 .buttons{
-display:flex;
-flex-wrap:wrap;
-gap:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:32px;
 }
 
 .btn{
-display:inline-block;
-padding:15px 25px;
-border-radius:14px;
-font-weight:800;
-border:2px solid var(--blue);
+  display:inline-block;
+  padding:15px 25px;
+  border-radius:14px;
+  font-weight:800;
+  border:2px solid var(--blue);
+  transition:.2s;
 }
 
-.btn.primary{
-background:var(--blue);
-color:white;
+.btn-primary{
+  color:white;
+  background:var(--blue);
 }
+
+.btn-primary:hover{
+  background:var(--blue-dark);
+}
+
+.btn-outline{
+  color:var(--blue);
+  background:white;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* PHOTO / PROFILE CARD */
+
+.profile-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:28px;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+.profile-circle{
+  width:190px;
+  height:190px;
+  margin:0 auto 25px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#1268c9,#dcecff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:62px;
+  font-weight:900;
+}
+
+.profile-card strong{
+  display:block;
+  font-size:22px;
+  color:var(--dark);
+}
+
+.profile-card span{
+  color:var(--muted);
+}
+
+/* SECTIONS */
 
 section{
-padding:80px 0;
+  padding:85px 0;
 }
 
-section:nth-of-type(even){
-background:var(--light);
+section:nth-child(even){
+  background:var(--light);
 }
 
 .section-title{
-font-size:42px;
-line-height:1.1;
-margin:0 0 35px;
-color:var(--dark);
-letter-spacing:-1.5px;
+  margin-bottom:45px;
 }
 
-.lead{
-font-size:20px;
-max-width:850px;
-color:var(--muted);
+.section-title .small{
+  color:var(--blue);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:900;
+  font-size:14px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:22px;
+.section-title h2{
+  margin:8px 0 12px;
+  font-size:42px;
+  line-height:1.15;
+  color:var(--dark);
+  letter-spacing:-1.5px;
+}
+
+.section-title p{
+  max-width:720px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
 }
 
 .card{
-background:white;
-border:1px solid var(--line);
-border-radius:var(--radius);
-padding:28px;
-box-shadow:0 8px 30px rgba(17,24,39,.05);
+  background:white;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:30px;
+  box-shadow:var(--shadow);
 }
 
 .card h3{
-margin:0 0 10px;
-font-size:22px;
-color:var(--dark);
+  margin-top:0;
+  color:var(--dark);
+  font-size:24px;
 }
 
 .card p{
-margin:0;
-color:var(--muted);
+  color:var(--muted);
 }
+
+/* EXPERIENCE */
 
 .timeline{
-display:grid;
-gap:18px;
+  display:grid;
+  gap:18px;
 }
 
-.item{
-border-left:4px solid var(--blue);
-padding:5px 0 5px 22px;
+.timeline-item{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px 30px;
+  box-shadow:var(--shadow);
+  border-left:5px solid var(--blue);
 }
 
-.item strong{
-display:block;
-font-size:20px;
-color:var(--dark);
+.timeline-date{
+  color:var(--blue);
+  font-weight:900;
+  font-size:14px;
+  margin-bottom:6px;
 }
 
-.item span{
-display:block;
-color:var(--blue);
-font-weight:700;
-margin:4px 0 8px;
+.timeline-item h3{
+  margin:3px 0;
+  color:var(--dark);
+  font-size:23px;
 }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:25px;
+.timeline-item .place{
+  color:var(--muted);
+  font-weight:700;
 }
 
-.skill{
-background:#eaf3ff;
-color:#145ca8;
-padding:9px 14px;
-border-radius:999px;
-font-weight:700;
+.timeline-item p{
+  margin-bottom:0;
+  color:var(--muted);
 }
 
-.contact{
-background:var(--dark)!important;
-color:white;
+/* AREAS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.contact .section-title{
-color:white;
+.icon{
+  font-size:34px;
+  margin-bottom:12px;
 }
 
-.contact p{
-color:#cbd5e1;
-max-width:700px;
+.cards h3{
+  color:var(--dark);
+  margin:5px 0 10px;
 }
+
+.cards p{
+  color:var(--muted);
+}
+
+/* EDUCATION */
+
+.education{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.education-item{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  border:1px solid var(--line);
+}
+
+.education-item h3{
+  margin:0 0 8px;
+  color:var(--dark);
+}
+
+.education-item p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* CONTACT */
 
 .contact-box{
-margin-top:30px;
-padding:28px;
-border:1px solid #334155;
-border-radius:var(--radius);
-background:#172033;
+  background:var(--dark);
+  color:white;
+  border-radius:30px;
+  padding:55px;
+  text-align:center;
 }
+
+.contact-box h2{
+  margin-top:0;
+  font-size:42px;
+}
+
+.contact-box p{
+  color:#cbd5e1;
+  font-size:18px;
+}
+
+.contact-button{
+  display:inline-block;
+  margin-top:20px;
+  background:var(--blue);
+  color:white;
+  padding:16px 30px;
+  border-radius:14px;
+  font-weight:900;
+}
+
+/* FOOTER */
 
 footer{
-padding:35px 0;
-background:#0b1220;
-color:#94a3b8;
-text-align:center;
-font-size:14px;
+  padding:35px 0;
+  background:#0b1220;
+  color:#aeb9c7;
+  text-align:center;
 }
 
-@media(max-width:760px){
-.links{
-display:none;
+footer strong{
+  color:white;
 }
 
-.hero{
-padding:65px 0;
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .nav-inner{
+    min-height:62px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:60px 0;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  h1{
+    letter-spacing:-2px;
+  }
+
+  .profile-card{
+    max-width:400px;
+    margin:auto;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .about-grid,
+  .education{
+    grid-template-columns:1fr;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .section-title h2{
+    font-size:34px;
+  }
+
+  .contact-box{
+    padding:35px 22px;
+  }
+
+  .contact-box h2{
+    font-size:34px;
+  }
 }
 
-h1{
-letter-spacing:-2px;
-}
-
-section{
-padding:60px 0;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.section-title{
-font-size:34px;
-}
-
-.card{
-padding:23px;
-}
-}
 </style>
-
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"Person",
-"name":"Andrzej Chrzanowski",
-"url":"https://andrzejchrzanowski.pl",
-"jobTitle":"Menedżer, instruktor, wykładowca i trener",
-"knowsLanguage":["pl","en","ru"]
-}
-</script>
-
 </head>
 
 <body>
 
 <nav>
-<div class="container navin">
-<a class="logo" href="#start">ANDRZEJ CHRZANOWSKI</a>
+  <div class="container nav-inner">
 
-<div class="links">
-<a href="#o-mnie">O mnie</a>
-<a href="#doswiadczenie">Doświadczenie</a>
-<a href="#kompetencje">Kompetencje</a>
-<a href="#kontakt">Kontakt</a>
-</div>
-</div>
+    <div class="logo">
+      Andrzej <span>Chrzanowski</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#o-mnie">O mnie</a>
+      <a href="#doswiadczenie">Doświadczenie</a>
+      <a href="#specjalizacje">Specjalizacje</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+
+  </div>
 </nav>
 
 <main>
 
-<section class="hero" id="start">
-<div class="container">
+<!-- HERO -->
 
-<div class="kicker">Oficjalna strona</div>
+<header class="hero">
+  <div class="container hero-grid">
 
-<h1>Andrzej<br>Chrzanowski</h1>
+    <div>
 
-<p>
-Profesjonalizm • Doświadczenie • Bezpieczeństwo • Rozwój
-</p>
+      <div class="kicker">
+        Oficjalna strona
+      </div>
 
-<div class="buttons">
-<a class="btn primary" href="#kontakt">Kontakt</a>
-<a class="btn" href="#doswiadczenie">Poznaj moje doświadczenie</a>
-</div>
+      <h1>
+        Andrzej<br>
+        Chrzanowski
+      </h1>
 
-</div>
-</section>
+      <div class="hero-subtitle">
+        Profesjonalizm • Doświadczenie • Bezpieczeństwo • Rozwój
+      </div>
 
+      <p class="hero-text">
+        Menedżer, instruktor, wykładowca i trener łączący
+        wieloletnie doświadczenie zawodowe z pracą szkoleniową,
+        edukacyjną i zarządzaniem zespołami.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#kontakt">
+          Kontakt
+        </a>
+
+        <a class="btn btn-outline" href="#doswiadczenie">
+          Poznaj moje doświadczenie
+        </a>
+      </div>
+
+    </div>
+
+    <div class="profile-card">
+
+      <div class="profile-circle">
+        AC
+      </div>
+
+      <strong>Andrzej Chrzanowski</strong>
+      <span>Menedżer • Instruktor • Wykładowca • Trener</span>
+
+    </div>
+
+  </div>
+</header>
+
+
+<!-- O MNIE -->
 
 <section id="o-mnie">
-<div class="container">
 
-<h2 class="section-title">O mnie</h2>
+  <div class="container">
 
-<p class="lead">
-Jestem doświadczonym menedżerem, instruktorem, wykładowcą i trenerem,
-łączącym wieloletnie doświadczenie zawodowe z pracą szkoleniową
-i edukacyjną.
-</p>
+    <div class="section-title">
+      <div class="small">O mnie</div>
+      <h2>Doświadczenie, które można wykorzystać w praktyce.</h2>
+      <p>
+        Wieloletnia praca w obszarach bezpieczeństwa, zarządzania,
+        edukacji, szkoleń oraz obsługi klienta.
+      </p>
+    </div>
 
-<div class="grid">
+    <div class="about-grid">
 
-<div class="card">
-<h3>Doświadczenie</h3>
-<p>
-W swojej karierze łączyłem pracę w obszarze bezpieczeństwa,
-zarządzania, edukacji, szkoleń oraz obsługi klienta.
-</p>
-</div>
+      <div class="card">
 
-<div class="card">
-<h3>Profesjonalizm</h3>
-<p>
-Stawiam na odpowiedzialność, wysokie standardy pracy,
-komunikację i praktyczne wykorzystanie zdobytej wiedzy.
-</p>
-</div>
+        <h3>Kim jestem?</h3>
 
-<div class="card">
-<h3>Bezpieczeństwo</h3>
-<p>
-Bezpieczeństwo, odpowiedzialność i właściwe przygotowanie
-do sytuacji wymagających zdecydowanego działania są ważnymi
-elementami mojego doświadczenia zawodowego.
-</p>
-</div>
+        <p>
+          Jestem doświadczonym menedżerem, instruktorem,
+          wykładowcą i trenerem. Łączę doświadczenie zawodowe
+          z praktyczną pracą szkoleniową i edukacyjną.
+        </p>
 
-<div class="card">
-<h3>Rozwój</h3>
-<p>
-Interesuje mnie rozwój osobisty i zawodowy oraz przekazywanie
-wiedzy i doświadczenia kolejnym osobom.
-</p>
-</div>
+        <p>
+          Szczególnie ważne są dla mnie odpowiedzialność,
+          bezpieczeństwo, profesjonalizm, kultura osobista
+          oraz rozwój człowieka.
+        </p>
 
-</div>
-</div>
+      </div>
+
+      <div class="card">
+
+        <h3>Moje podejście</h3>
+
+        <p>
+          W pracy stawiam na jasną komunikację, odpowiedzialność
+          i wysoką jakość wykonywanych zadań.
+        </p>
+
+        <p>
+          Doświadczenie zdobyte w różnych środowiskach zawodowych
+          pozwala mi łączyć perspektywę menedżera, instruktora
+          i nauczyciela.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
+
+<!-- DOŚWIADCZENIE -->
 
 <section id="doswiadczenie">
-<div class="container">
 
-<h2 class="section-title">Doświadczenie zawodowe</h2>
+  <div class="container">
 
-<div class="timeline">
+    <div class="section-title">
+      <div class="small">Doświadczenie zawodowe</div>
+      <h2>Najważniejsze etapy kariery</h2>
+    </div>
 
-<div class="item">
-<strong>Manager Zespołu Portierskiego</strong>
-<span>5★ Grand Hotel w Łodzi | 2023 – obecnie</span>
-Zarządzanie zespołem, organizacja codziennej pracy,
-dbałość o standard obsługi gości oraz bezpieczeństwo.
-</div>
+    <div class="timeline">
 
-<div class="item">
-<strong>Akademia Bezpiecznej Jazdy</strong>
-<span>Właściciel / Instruktor | 2011 – obecnie</span>
-Prowadzenie działalności szkoleniowej związanej z bezpieczną
-i zaawansowaną techniką jazdy.
-</div>
+      <div class="timeline-item">
 
-<div class="item">
-<strong>Praca szkoleniowa i edukacyjna</strong>
-<span>Wykładowca / nauczyciel</span>
-Doświadczenie w przekazywaniu wiedzy, prowadzeniu zajęć
-oraz pracy z osobami uczącymi się.
-</div>
+        <div class="timeline-date">
+          10.2023 – obecnie
+        </div>
 
-<div class="item">
-<strong>Służba w Policji</strong>
-<span>1991 – 2011</span>
-Wieloletnie doświadczenie zawodowe związane z bezpieczeństwem,
-odpowiedzialnością oraz pracą w strukturach Policji.
-</div>
+        <h3>
+          Menedżer Zespołu Portierskiego
+        </h3>
 
-</div>
+        <div class="place">
+          Grand Hotel – Łódź
+        </div>
 
-</div>
+        <p>
+          Zarządzanie zespołem, organizacja codziennej pracy,
+          nadzór nad jakością obsługi gości, bezpieczeństwem
+          oraz standardami pięciogwiazdkowego hotelu.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-date">
+          09.2011 – obecnie
+        </div>
+
+        <h3>
+          Akademia Bezpiecznej Jazdy
+        </h3>
+
+        <div class="place">
+          Właściciel • Instruktor
+        </div>
+
+        <p>
+          Prowadzenie działalności szkoleniowej związanej
+          z bezpieczną i defensywną techniką jazdy.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-date">
+          2014 – 2023
+        </div>
+
+        <h3>
+          Nauczyciel / Wykładowca
+        </h3>
+
+        <div class="place">
+          Działalność edukacyjna i szkoleniowa
+        </div>
+
+        <p>
+          Praca dydaktyczna, prowadzenie zajęć,
+          przekazywanie wiedzy oraz doświadczenia praktycznego.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-date">
+          01.1991 – 07.2011
+        </div>
+
+        <h3>
+          Funkcjonariusz Policji
+        </h3>
+
+        <div class="place">
+          Policja • podinspektor
+        </div>
+
+        <p>
+          Wieloletnia służba związana z bezpieczeństwem,
+          odpowiedzialnością, pracą z ludźmi oraz szkoleniem.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 
-<section id="kompetencje">
-<div class="container">
+<!-- SPECJALIZACJE -->
 
-<h2 class="section-title">Kompetencje</h2>
+<section id="specjalizacje">
 
-<div class="grid">
+  <div class="container">
 
-<div class="card">
-<h3>Bezpieczeństwo i szkolenia</h3>
-<p>
-Szkolenia, bezpieczeństwo, samoobrona, technika jazdy
-oraz przygotowanie do sytuacji wymagających odpowiedzialnego działania.
-</p>
-</div>
+    <div class="section-title">
+      <div class="small">Kompetencje</div>
+      <h2>Obszary doświadczenia</h2>
+    </div>
 
-<div class="card">
-<h3>Zarządzanie</h3>
-<p>
-Organizacja pracy zespołu, nadzorowanie zadań,
-komunikacja i utrzymywanie wysokich standardów obsługi.
-</p>
-</div>
+    <div class="cards">
 
-<div class="card">
-<h3>Hotelarstwo</h3>
-<p>
-Doświadczenie w pracy w środowisku pięciogwiazdkowego hotelu
-oraz bezpośredniej obsłudze gości.
-</p>
-</div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>Bezpieczeństwo</h3>
+        <p>
+          Wieloletnie doświadczenie zawodowe związane
+          z bezpieczeństwem i odpowiedzialnością.
+        </p>
+      </div>
 
-<div class="card">
-<h3>Edukacja</h3>
-<p>
-Doświadczenie wykładowcy, nauczyciela, instruktora i trenera.
-</p>
-</div>
+      <div class="card">
+        <div class="icon">🚗</div>
+        <h3>Bezpieczna jazda</h3>
+        <p>
+          Szkolenia z zakresu bezpiecznej i defensywnej
+          techniki prowadzenia pojazdów.
+        </p>
+      </div>
 
-</div>
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>Edukacja i szkolenia</h3>
+        <p>
+          Doświadczenie w prowadzeniu zajęć,
+          wykładów oraz szkoleń.
+        </p>
+      </div>
 
-<div class="skills">
-<span class="skill">Zarządzanie</span>
-<span class="skill">Bezpieczeństwo</span>
-<span class="skill">Szkolenia</span>
-<span class="skill">Instruktaż</span>
-<span class="skill">Hotelarstwo</span>
-<span class="skill">Obsługa klienta</span>
-<span class="skill">Technika jazdy</span>
-<span class="skill">Edukacja</span>
-</div>
+      <div class="card">
+        <div class="icon">👔</div>
+        <h3>Zarządzanie</h3>
+        <p>
+          Organizacja pracy zespołu, odpowiedzialność
+          za jakość usług i realizację standardów.
+        </p>
+      </div>
 
-</div>
+      <div class="card">
+        <div class="icon">🏨</div>
+        <h3>Hotelarstwo</h3>
+        <p>
+          Doświadczenie w obsłudze gości i zarządzaniu
+          zespołem w hotelu pięciogwiazdkowym.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🥋</div>
+        <h3>Sport i rozwój</h3>
+        <p>
+          Doświadczenie instruktorskie oraz zainteresowanie
+          aktywnością fizyczną i rozwojem młodzieży.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 
-<section>
-<div class="container">
+<!-- EDUKACJA -->
 
-<h2 class="section-title">Wykształcenie i kwalifikacje</h2>
+<section id="edukacja">
 
-<div class="grid">
+  <div class="container">
 
-<div class="card">
-<h3>Wyższe wykształcenie</h3>
-<p>
-Magister politologii oraz wykształcenie związane
-z przygotowaniem do służby i pracy w obszarze bezpieczeństwa.
-</p>
-</div>
+    <div class="section-title">
+      <div class="small">Wykształcenie</div>
+      <h2>Edukacja i kwalifikacje</h2>
+    </div>
 
-<div class="card">
-<h3>Uprawnienia i kursy</h3>
-<p>
-Kwalifikacje instruktorskie, szkolenia z zakresu samoobrony,
-TONFA, BHP, pierwszej pomocy oraz bezpiecznej jazdy.
-</p>
-</div>
+    <div class="education">
 
-</div>
+      <div class="education-item">
+        <h3>Wyższa Szkoła Policji w Szczytnie</h3>
+        <p>Wykształcenie oficerskie.</p>
+      </div>
 
-</div>
+      <div class="education-item">
+        <h3>Akademia Świętokrzyska w Kielcach</h3>
+        <p>Magister politologii.</p>
+      </div>
+
+      <div class="education-item">
+        <h3>Szkolenia instruktorskie</h3>
+        <p>
+          Instruktor samoobrony, TONFA oraz inne
+          kwalifikacje związane z bezpieczeństwem.
+        </p>
+      </div>
+
+      <div class="education-item">
+        <h3>Dodatkowe kwalifikacje</h3>
+        <p>
+          Prawo jazdy kategorii ABCE, BHP,
+          pierwsza pomoc oraz szkolenia zawodowe.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 
-<section id="kontakt" class="contact">
-<div class="container">
+<!-- KONTAKT -->
 
-<h2 class="section-title">Kontakt</h2>
+<section id="kontakt">
 
-<p>
-Jeżeli chcesz nawiązać współpracę, zaprosić mnie do projektu,
-szkolenia lub porozmawiać o możliwościach współpracy —
-zapraszam do kontaktu.
-</p>
+  <div class="container">
 
-<div class="contact-box">
-<strong>Andrzej Chrzanowski</strong><br>
-Menedżer • Instruktor • Wykładowca • Trener
-<br><br>
-<a class="btn" href="mailto:kontakt@andrzejchrzanowski.pl">
-Napisz wiadomość
-</a>
-</div>
+    <div class="contact-box">
 
-</div>
+      <h2>Skontaktuj się ze mną</h2>
+
+      <p>
+        Zapraszam do kontaktu w sprawach zawodowych,
+        szkoleniowych, edukacyjnych i współpracy.
+      </p>
+
+      <a class="contact-button" href="mailto:kontakt@andrzejchrzanowski.pl">
+        Napisz wiadomość
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
 </main>
 
+
 <footer>
-<div class="container">
-© 2026 Andrzej Chrzanowski • Oficjalna strona internetowa
-</div>
+
+  <div class="container">
+
+    <p>
+      <strong>Andrzej Chrzanowski</strong>
+    </p>
+
+    <p>
+      Oficjalna strona internetowa
+    </p>
+
+    <p>
+      © 2026 Andrzej Chrzanowski
+    </p>
+
+  </div>
+
 </footer>
 
 </body>
